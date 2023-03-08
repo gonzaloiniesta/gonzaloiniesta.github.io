@@ -1,0 +1,11 @@
+Model Information:
+* title:	Nave
+* source:	https://sketchfab.com/3d-models/nave-2d7285bbedf74a0a9aaffe15c5eb3747
+* author:	Abel.A.M (https://sketchfab.com/Abel.A.M)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Nave" (https://sketchfab.com/3d-models/nave-2d7285bbedf74a0a9aaffe15c5eb3747) by Abel.A.M (https://sketchfab.com/Abel.A.M) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,339 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 477,
+      "max": [
+        79.0837631225586,
+        399.1439208984375,
+        759.77880859375
+      ],
+      "min": [
+        -79.0837631225586,
+        175.92169189453125,
+        -455.3332214355469
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 5724,
+      "componentType": 5126,
+      "count": 477,
+      "max": [
+        0.9999996423721313,
+        1.0,
+        0.993910551071167
+      ],
+      "min": [
+        -0.9999996423721313,
+        -0.011836997233331203,
+        -0.9839048981666565
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 477,
+      "max": [
+        0.7146959900856018,
+        1.11835515499115
+      ],
+      "min": [
+        0.06658542901277542,
+        1.0326180458068848
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 2064,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 11448,
+      "componentType": 5126,
+      "count": 60396,
+      "max": [
+        1872.6021728515625,
+        478.0638732910156,
+        1160.047119140625
+      ],
+      "min": [
+        -1872.6021728515625,
+        -289.54644775390625,
+        -1174.173828125
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 736200,
+      "componentType": 5126,
+      "count": 60396,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.9999997615814209
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 3816,
+      "componentType": 5126,
+      "count": 60396,
+      "max": [
+        0.9978830218315125,
+        0.998678982257843
+      ],
+      "min": [
+        0.00027099999715574086,
+        0.004447000101208687
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 8256,
+      "componentType": 5125,
+      "count": 153027,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Abel.A.M (https://sketchfab.com/Abel.A.M)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/nave-2d7285bbedf74a0a9aaffe15c5eb3747",
+      "title": "Nave"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 620364,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 486984,
+      "byteOffset": 620364,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1460952,
+      "byteOffset": 1107348,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2568300,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/blinn1_baseColor.png"
+    },
+    {
+      "uri": "textures/blinn1_metallicRoughness.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "phong1",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4,
+          0.4,
+          0.4,
+          0.05659298780487805
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8942628736559436
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "blinn1",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.9471766445332751
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "ARC_170_LEE_RAY:polySurface1394_phong1_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "ARC_170_LEE_RAY:polySurface1394_blinn1_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "0373847ecf0a42929b0e8b94f8da1e96.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "matrix": [
+        0.3937007784843445,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3937007784843441,
+        1.7209208296473247e-08,
+        0.0,
+        0.0,
+        -1.7209208296473247e-08,
+        0.3937007784843441,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "ARC_170_LEE_RAY:polySurface1394"
+    },
+    {
+      "mesh": 0,
+      "name": "ARC_170_LEE_RAY:polySurface1394_phong1_0"
+    },
+    {
+      "mesh": 1,
+      "name": "ARC_170_LEE_RAY:polySurface1394_blinn1_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}
