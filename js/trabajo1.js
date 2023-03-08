@@ -162,7 +162,6 @@ function setupGUI()
 {
 	// Definicion de los controles
 	effectController = {
-		mensaje: 'My cinema',
 		balanceo: 0.0,
 	    velocidad: 0.0,
 		sombras: true,
@@ -177,7 +176,6 @@ function setupGUI()
 
 	// Construccion del menu
 	const h = gui.addFolder("Control Nave");
-	h.add(effectController, "mensaje").name("Aplicacion");
 	h.add(effectController, "balanceo", -0.525, 0.525, 0.025).name("Balanceo de la nave");
     
 	
