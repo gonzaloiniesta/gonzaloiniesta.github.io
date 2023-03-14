@@ -40,7 +40,7 @@ function init()
                   map: new THREE.TextureLoader().load(path+"galaxy+Z.jpg")}) );
     paredes.push( new THREE.MeshBasicMaterial({side:THREE.BackSide,
                   map: new THREE.TextureLoader().load(path+"galaxy-Z.jpg")}) );
-    const habitacion = new THREE.Mesh( new THREE.BoxGeometry(40,40,40),paredes);
+    const habitacion = new THREE.Mesh( new THREE.BoxGeometry(70,70,70),paredes);
     scene.add(habitacion);
 
      // Cine
@@ -52,17 +52,26 @@ function init()
      const texvideo = new THREE.VideoTexture(video);
      const pantalla = new THREE.Mesh(new THREE.PlaneGeometry(20,6, 4,4), 
                                      new THREE.MeshBasicMaterial({map:texvideo}));
-     pantalla.position.set(19.5, 5, 0);
+     pantalla.position.set(30, 5, 0);
      pantalla.rotation.y = -Math.PI/2;
      scene.add(pantalla);
 
     // Eventos
-    //renderer.domElement.addEventListener('dblclick', animate );
+    renderer.domElement.addEventListener('dblclick', animate );
+    renderer.domElement.addEventListener("keydown", onDocumentKeyDown, false);
+    renderer.domElement.addEventListener("resize", redimensionar);
 }
 
+function redimensionar(){
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.render(scene, camera);
+
+};
 
 function loadScene()
-{
+{document.addEventListener("keydown", onDocumentKeyDown, false);
     // Material sencillo
     const material = new THREE.MeshBasicMaterial({color:'black',wireframe:true});
 
@@ -72,7 +81,7 @@ function loadScene()
     suelo.position.y = -0.2;
     scene.add(suelo);
 
-    scene.add( new THREE.AxesHelper(3) );
+    
 
 
     //cameraControls = new OrbitControls( camera, renderer.domElement );
@@ -83,13 +92,14 @@ function loadScene()
     nave.load( 'models/nave/scene.gltf', function ( gltf ) {
         gltf.scene.name = 'nave';
         gltf.scene.scale.set(0.004, 0.004, 0.004);
+        gltf.scene.position.x = -4;
+        gltf.scene.position.y = 0;
+        gltf.scene.position.z = 3;
         gltf.scene.rotation.x = Math.PI/2;
         gltf.scene.rotation.y = -Math.PI/2;
         gltf.scene.rotation.z = 0;
 
-        gltf.scene.position.x = -4;
-        gltf.scene.position.y = 0;
-        gltf.scene.position.z = 3;
+       
 
         suelo.add( gltf.scene );
     
@@ -198,6 +208,76 @@ function render()
     renderer.render(scene,camera);
 }
 
+function animate(event)
+{
+    // Capturar y normalizar
+    let x= event.clientX;
+    let y = event.clientY;
+    x = ( x / window.innerWidth ) * 2 - 1;
+    y = -( y / window.innerHeight ) * 2 + 1;
+
+    // Construir el rayo y detectar la interseccion
+    const rayo = new THREE.Raycaster();
+    rayo.setFromCamera(new THREE.Vector2(x,y), camera);
+    const nave = scene.getObjectByName('nave');
+    let intersecciones = rayo.intersectObjects(nave.children,true);
+    let px, py, pz;
+    px = nave.position.x;
+    py = nave.position.y;
+    pz = nave.position.z;
+    console.log(px, py, pz)
+    if( intersecciones.length > 0 ){
+        new TWEEN.Tween( nave.position ).
+        to( {x:[px+14,px+9,px],y:[py,py,py],z:[pz-3,pz+4,pz]}, 2000 ).
+        interpolation( TWEEN.Interpolation.Bezier ).
+        easing( TWEEN.Easing.Quadratic.InOut).
+        start();
+    }
+}
+
+function onDocumentKeyDown(event) {
+    var keyCode = event.which;
+    const nave = scene.getObjectByName('nave');
+    
+    //Izquierda
+    if (keyCode == 37) {
+        if (nave.position.y + 1 != 32 ){
+            nave.position.y +=1;
+            camera.position.z -=1;
+            printPosNaveCamara();
+        }
+    // Derecha
+    } else if (keyCode == 39) {
+        if (nave.position.y != -32){
+            nave.position.y -=1;
+            camera.position.z +=1;
+            printPosNaveCamara();
+        }
+    //Arriba
+    } else if (keyCode == 38){
+        if (nave.position.x != 22){
+            nave.position.x +=1;
+            camera.position.x +=1;
+            printPosNaveCamara();
+        }
+    //Abajo
+    } else if(keyCode == 40){
+        if (nave.position.x != -30){
+            nave.position.x -=1;
+            camera.position.x -=1;
+            printPosNaveCamara();
+        }
+    }
+    
+};
+
+function printPosNaveCamara(){
+    console.log("Nave:");
+    console.log(nave.position);
+    console.log("Camara");
+    console.log(camera.position);
+}
+
 
 function updateAsteroide()
 {
@@ -223,7 +303,6 @@ function updateAsteroide()
 
 function update(){
     nave = scene.getObjectByName('nave');
-    console.log(nave.position);
     nave.rotation.y = -Math.PI/2 + effectController.balanceo ;
     nave.rotation.x = Math.PI/2 + effectController.balanceo;
 
@@ -237,6 +316,7 @@ let renderer, scene, camera, video;
 let cameraControls, effectController;
 let asteroide1, asteroide2, asteroide3, asteroide4, nave;
 let angulo = 0;
+
 
 init();
 loadScene();
