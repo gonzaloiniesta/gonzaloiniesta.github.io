@@ -9,20 +9,20 @@ html, body{
     text-align: center;
 }
 .header{
-    background-image: url(./img/hero.jpeg);
+    background-image: url(./img/collage.jpeg);
     background-repeat: no-repeat;
-    background-position: 50% 60%;
+    background-position: 30% 40%;
     background-attachment: scroll;
     background-size: cover;
-    height: 40vh;
+    height: 70vh;
     margin: 0;
-    padding-top: 60vh;
+    padding-top: 30vh;
 }
 .heading {
     color: #ffffff;
     display: block;
     font-family: 'Caveat', cursive;
-    font-size: 6em;
+    font-size: 10em;
     font-weight: normal;
     text-shadow: 0 0 10px #000;
 }
@@ -78,9 +78,13 @@ html, body{
     font-size: 3em;
     opacity: .8;
 }
-.resort-image{
+.bebe-image{
+    width: 60%
+}
+.vi-image{
     width: 100%
 }
+
 
 @media only screen and (max-width: 600px) {
     .heading {
