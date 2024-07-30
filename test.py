@@ -1,7 +1,7 @@
 import qrcode
 
 # La URL que deseas convertir en código QR
-url = "https://gonzaloiniesta.github.io/"
+url = "https://entradas.mayabenicassim.com/es/?prom=goiniestahttps://entradas.mayabenicassim.com/es/?prom=goiniesta"
 
 # Crear el código QR
 qr = qrcode.QRCode(
