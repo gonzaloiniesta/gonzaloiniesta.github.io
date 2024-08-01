@@ -3,59 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regalo Ainoa</title>
+    <title>Interacción con Movimiento</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: #add8e6; /* Azul claro */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            margin: 0;
+            overflow: hidden;
         }
-        .container {
-            background-color: #fff;
-            border: 2px solid #000;
-            padding: 20px;
-            max-width: 600px;
-            text-align: center;
+
+        #prepucio {
+            width: 400px; /* 4 veces más grande */
+            height: 600px; /* Ajusta la altura proporcionalmente */
+            background-image: url('images/pene.png'); /* Ruta a la imagen */
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px; /* Ajusta el borde según sea necesario */
+            position: relative;
+            cursor: pointer;
         }
-        .title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #000;
+
+        #liquido {
+            width: 30px; /* Ajusta el tamaño del líquido según sea necesario */
+            height: 50px;
+            background-image: url('images/lefa2.png'); /* Ruta a la imagen */
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            display: none;
         }
-        .subtitle {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #000;
+
+        @keyframes moveUpDown {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-40px); }
+            50% { transform: translateY(40px); }
+            75% { transform: translateY(-40px); }
         }
-        .important {
-            font-size: 20px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #000;
-        }
-        .note {
-            font-size: 18px;
-            color: #000;
-        }
-        .signatures {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #000;
+
+        @keyframes expand {
+            0% {
+                width: 30px;
+                height: 50px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                width: 100vw;
+                height: 100vh;
+                left: 0;
+                top: 0;
+                transform: translate(0, 0) scale(1);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">Vale de regalo ilustrado cumpleaños azul</div>
-        <div class="subtitle">VALE POR UNA CENA PARA 2</div>
-        <div class="important">IMPORTANTE</div>
-        <div class="note">LA SEGUNDA PARTE DEL REGALO ES QUE LA CENA SOLO ES VÁLIDA CON ISEL Y NACHO, SOLO SE PUEDE CANJEAR CON ELLOS</div>
-        <div class="signatures">ISEL Y NACHO</div>
-    </div>
+    <div id="prepucio"></div>
+    <div id="liquido"></div>
+
+    <script>
+        document.getElementById('prepucio').addEventListener('click', function() {
+            var prepucio = document.getElementById('prepucio');
+            var liquido = document.getElementById('liquido');
+            
+            prepucio.style.animation = 'moveUpDown 1s ease-in-out 4';
+
+            setTimeout(function() {
+                liquido.style.display = 'block';
+                liquido.style.position = 'fixed';
+                liquido.style.animation = 'expand 2s forwards';
+                setTimeout(function() {
+                    window.location.href = 'https://gonzaloiniesta.github.io/regalo_ainoa.pdf';
+                }, 2000); // 2 segundos para completar la animación de expansión
+            }, 4000); // 4 segundos para completar la animación del prepucio
+        });
+    </script>
 </body>
 </html>
