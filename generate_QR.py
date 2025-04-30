@@ -1,7 +1,7 @@
 import qrcode
 
 # La URL que deseas convertir en código QR
-url = "https://gonzaloiniesta.github.io/regalo_ainoa.pdf"
+url = "https://gonzaloiniesta.github.io/"
 
 # Crear el código QR
 qr = qrcode.QRCode(
@@ -17,4 +17,4 @@ qr.make(fit=True)
 img = qr.make_image(fill_color="black", back_color="white")
 
 # Guardar la imagen
-img.save("codigo_qr.png")
+img.save("carta_qr.png")
