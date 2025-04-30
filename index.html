@@ -1,86 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interacción con Movimiento</title>
-    <style>
-        body {
-            background-color: #add8e6; /* Azul claro */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        #prepucio {
-            width: 400px; /* 4 veces más grande */
-            height: 600px; /* Ajusta la altura proporcionalmente */
-            background-image: url('images/pene.png'); /* Ruta a la imagen */
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px; /* Ajusta el borde según sea necesario */
-            position: relative;
-            cursor: pointer;
-        }
-
-        #liquido {
-            width: 30px; /* Ajusta el tamaño del líquido según sea necesario */
-            height: 50px;
-            background-image: url('images/lefa2.png'); /* Ruta a la imagen */
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            display: none;
-        }
-
-        @keyframes moveUpDown {
-            0%, 100% { transform: translateY(0); }
-            25% { transform: translateY(-40px); }
-            50% { transform: translateY(40px); }
-            75% { transform: translateY(-40px); }
-        }
-
-        @keyframes expand {
-            0% {
-                width: 30px;
-                height: 50px;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%) scale(0);
-            }
-            100% {
-                width: 100vw;
-                height: 100vh;
-                left: 0;
-                top: 0;
-                transform: translate(0, 0) scale(1);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <!-- Hace que el ancho virtual de la página coincida con el ancho real del dispositivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Móvil</title>
+  <style>
+    /* Reset sencillo */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      /* Asegura que el body ocupe toda la altura visible */
+      min-height: 100vh;
+    }
+    .container {
+      /* Ancho máximo típico de móvil (puedes ajustar) */
+      max-width: 400px;
+      /* Ocupa el 100% hasta ese máximo */
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      /* Altura: llena todo el alto de la ventana */
+      min-height: 100vh;
+    }
+    header, main, footer {
+      padding: 16px;
+    }
+    header {
+      background: #0070f3;
+      color: white;
+      text-align: center;
+    }
+    main {
+      flex: 1; /* para que el contenido principal crezca */
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      border-top: 1px solid #eee;
+    }
+  </style>
 </head>
 <body>
-    <div id="prepucio"></div>
-    <div id="liquido"></div>
-
-    <script>
-        document.getElementById('prepucio').addEventListener('click', function() {
-            var prepucio = document.getElementById('prepucio');
-            var liquido = document.getElementById('liquido');
-            
-            prepucio.style.animation = 'moveUpDown 1s ease-in-out 4';
-
-            setTimeout(function() {
-                liquido.style.display = 'block';
-                liquido.style.position = 'fixed';
-                liquido.style.animation = 'expand 2s forwards';
-                setTimeout(function() {
-                    window.location.href = 'https://gonzaloiniesta.github.io/regalo_ainoa.pdf';
-                }, 2000); // 2 segundos para completar la animación de expansión
-            }, 4000); // 4 segundos para completar la animación del prepucio
-        });
-    </script>
+  <div class="container">
+    <header>
+      <h1>Mi App Móvil</h1>
+    </header>
+    <main>
+      <p>¡Bienvenido! Este es un contenedor de ejemplo con tamaño de móvil.</p>
+    </main>
+    <footer>
+      &copy; 2025 Mi Nombre
+    </footer>
+  </div>
 </body>
 </html>
