@@ -1,63 +1,553 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <!-- Hace que el ancho virtual de la página coincida con el ancho real del dispositivo -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página Móvil</title>
-  <style>
-    /* Reset sencillo */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: sans-serif;
-      background: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      /* Asegura que el body ocupe toda la altura visible */
-      min-height: 100vh;
-    }
-    .container {
-      /* Ancho máximo típico de móvil (puedes ajustar) */
-      max-width: 400px;
-      /* Ocupa el 100% hasta ese máximo */
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      /* Altura: llena todo el alto de la ventana */
-      min-height: 100vh;
-    }
-    header, main, footer {
-      padding: 16px;
-    }
-    header {
-      background: #0070f3;
-      color: white;
-      text-align: center;
-    }
-    main {
-      flex: 1; /* para que el contenido principal crezca */
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      border-top: 1px solid #eee;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Cumpleaños para Vanesa</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Reset y estilos base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #330a14;
+            font-family: 'Open Sans', sans-serif;
+            color: #eee;
+            overflow-x: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Contenedor central con borde luminoso */
+        .container {
+            max-width: 380px;
+            margin: 40px auto;
+            background: rgba(30, 0, 10, 0.8);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 0 20px #ff66b2;
+            animation: glow 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px #ff0080;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #ff66b2;
+            }
+        }
+
+        /* Collage de imágenes */
+        figure.collage {
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.8s;
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .collage-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform .3s;
+        }
+
+        .collage-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        figure {
+            margin: 20px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        figure img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: transform .3s;
+        }
+
+        figure img:hover {
+            transform: scale(1.05);
+        }
+
+        .signature {
+            margin-top: 24px;
+            text-align: right;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 18s;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 16px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #ff66b2;
+        }
+
+        /* Resalte específico */
+        .highlight {
+            background: rgba(255, 0, 128, 0.3);
+            border-left: 4px solid #ff0080;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .highlight::before {
+            content: '🚨';
+            font-family: 'Consolas', monospace;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        /* Animaciones de texto */
+        .letter p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .letter p:nth-of-type(1) {
+            animation-delay: 1s;
+        }
+
+        .letter p:nth-of-type(2) {
+            animation-delay: 1.5s;
+        }
+
+        .letter p:nth-of-type(3) {
+            animation-delay: 2s;
+        }
+
+        .letter p:nth-of-type(4) {
+            animation-delay: 2.5s;
+        }
+
+        .letter p:nth-of-type(5) {
+            animation-delay: 3s;
+        }
+
+        .letter p:nth-of-type(6) {
+            animation-delay: 3.5s;
+        }
+
+        .letter p:nth-of-type(7) {
+            animation-delay: 4s;
+        }
+
+        .letter p:nth-of-type(8) {
+            animation-delay: 4.5s;
+        }
+
+        .letter p:nth-of-type(9) {
+            animation-delay: 5s;
+        }
+
+        .letter p:nth-of-type(10) {
+            animation-delay: 5.5s;
+        }
+
+        .letter p:nth-of-type(11) {
+            animation-delay: 6s;
+        }
+
+        .letter p:nth-of-type(12) {
+            animation-delay: 6.5s;
+        }
+
+        .letter p:nth-of-type(13) {
+            animation-delay: 7s;
+        }
+
+        .letter p:nth-of-type(14) {
+            animation-delay: 7.5s;
+        }
+
+        .letter p:nth-of-type(15) {
+            animation-delay: 8s;
+        }
+
+        .letter p:nth-of-type(16) {
+            animation-delay: 8.5s;
+        }
+
+        .letter p:nth-of-type(17) {
+            animation-delay: 9s;
+        }
+
+        .letter p:nth-of-type(18) {
+            animation-delay: 9.5s;
+        }
+
+        .letter p:nth-of-type(19) {
+            animation-delay: 10s;
+        }
+
+        .letter p:nth-of-type(20) {
+            animation-delay: 10.5s;
+        }
+
+        .letter p:nth-of-type(21) {
+            animation-delay: 11s;
+        }
+
+        .letter p:nth-of-type(22) {
+            animation-delay: 11.5s;
+        }
+
+        .letter p:nth-of-type(23) {
+            animation-delay: 12s;
+        }
+
+        .letter p:nth-of-type(24) {
+            animation-delay: 12.5s;
+        }
+
+        .letter p:nth-of-type(25) {
+            animation-delay: 13s;
+        }
+
+        .letter p:nth-of-type(26) {
+            animation-delay: 13.5s;
+        }
+
+        .letter p:nth-of-type(27) {
+            animation-delay: 14s;
+        }
+
+        .letter p:nth-of-type(28) {
+            animation-delay: 14.5s;
+        }
+
+        .letter p:nth-of-type(29) {
+            animation-delay: 15s;
+        }
+
+        .letter p:nth-of-type(30) {
+            animation-delay: 15.5s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .divider {
+            width: 60px;
+            height: 4px;
+            background: #ff0080;
+            margin: 20px auto;
+            border-radius: 2px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .divider:nth-of-type(1) {
+            animation-delay: 3.2s;
+        }
+
+        .divider:nth-of-type(2) {
+            animation-delay: 6.8s;
+        }
+
+        figure {
+            margin: 20px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        figure:nth-of-type(1) {
+            animation-delay: 3.3s;
+        }
+
+        figure:nth-of-type(2) {
+            animation-delay: 4.1s;
+        }
+
+        figure:nth-of-type(3) {
+            animation-delay: 4.9s;
+        }
+
+        figure img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: transform .3s;
+        }
+
+        figure img:hover {
+            transform: scale(1.05);
+        }
+
+        .signature {
+            margin-top: 24px;
+            text-align: right;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 16s;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 16.5s;
+        }
+
+        /* Corazones flotantes */
+        .float-heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: floatUp 3s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-150px) scale(1.3);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>Mi App Móvil</h1>
-    </header>
-    <main>
-      <p>¡Bienvenido! Este es un contenedor de ejemplo con tamaño de móvil.</p>
-    </main>
-    <footer>
-      &copy; 2025 Mi Nombre
-    </footer>
-  </div>
+    <div class="container">
+        <header>
+            <h1>Feliz Cumpleaños 💖</h1>
+        </header>
+        <article class="letter">
+            <p>Hola Vanesa,</p>
+            <p>¿Qué tal estás? Bueno, como no sabía qué podía regalarte por tu cumpleaños, he decidido tirar un poco de
+                la imaginación para intentar sorprenderte. Esto es la primera vez que lo hago en la vida. Lo de escribir
+                una carta, digo. Escribir desde muy pequeño, se hace garabatos.</p>
+            <p>Ya hace diez años que nos conocemos, diez años que has estado en mi cabeza. Me acuerdo perfectamente del
+                día en el que te conocí. Aquella mañana, una vez acabamos la reunión de los “Gatos Voladores”, no podía
+                parar de pensar en ti. Era una sensación muy rara, pero gracias a esa sensación estamos juntos hoy en
+                día.</p>
+
+            <figure>
+                <img src="imagenes_v/gatosvoladores.jpeg" alt="2015">
+            </figure>
+
+            <p>Eso hizo que me decidiera a saber quién eras, y me quedé en la rampa del campo de rugby de Jávea hasta
+                que salieras. Al verte, sentí una sensación de nervios que nunca había sentido. Fueron 30 segundos en
+                los que interactuamos, intercambiamos nuestros Instagram y luego nos despedimos. Yo estaba en una nube,
+                feliz. Me pasé todo el autobús de vuelta a Benicàssim mirando tu Instagram como un bobo.</p>
+
+            <p>A raíz de eso, empezamos a hablar por WhatsApp, tanto por el grupo de los Gatos como por privado. Era la
+                primera vez que le hablaba a una chica.</p>
+            <p>Ahí me dije: háblale, ¿qué más da?</p>
+            <p>De los primeros días no me acuerdo qué es lo que hablábamos, pero me acuerdo de un día que estuvimos toda
+                la tarde, hablando por WhatsApp, y cuando nos despedimos para irnos a cenar, me enviaste un emoji de un
+                besito 😘. Esa tontería hizo que me pusiera súper nervioso y feliz.</p>
+
+
+            <figure class="collage">
+                <div class="collage-grid">
+                    <img src="imagenes_v/peluche.jpeg" alt="2015">
+                    <img src="imagenes_v/vanesa_hablamos.jpeg" alt="2015">
+                </div>
+            </figure>
+
+            <p>Esos primeros meses hablando sin parar, parecíamos novios, pero nos separaban muchos kilómetros. Yo me
+                enamoré de ti. Eres mi primer amor, aunque fuera a distancia.</p>
+
+
+            <figure class="collage">
+                <div class="collage-grid">
+                    <img src="imagenes_v/vanesa_hablamos2.jpeg" alt="2015">
+                    <img src="imagenes_v/gonzalo_hablamos.jpeg" alt="2015">
+                </div>
+            </figure>
+
+
+            <p>Hablábamos y hablábamos, pero poco a poco fuimos dejando de hablar. Durante ese tiempo, nunca saliste de
+                mi cabeza.</p>
+
+            <div class="divider"></div>
+
+            <p>Pasaron varios meses y se acercaba el Com Sona l’ESO. Esa noche yo estaba cenando en la pizzería Italia
+                con mis amigos y subiste una foto a Instagram, en la cual dejé un comentario. A partir de ahí, retomamos
+                las conversaciones hasta que, llegado Com Sona l’ESO, nos volvimos a ver.</p>
+            <p>Yo nunca me había liado con una chica, ni con un chico, pero sabía que posiblemente tú ibas a robarme mi
+                primer beso.</p>
+
+            <figure>
+                <img src="imagenes_v/cse_espejo.jpeg" alt="2016">
+            </figure>
+
+            <p>El primer día estuvimos toda la tarde cada uno a lo suyo, pero finalmente quedamos. Estuvimos en tu
+                tienda de campaña un buen rato hablando. Yo no tenía valor para lanzarme, estaba muy nervioso, pero
+                cuando nos fuimos a mi tienda, me lancé: mi primer beso.</p>
+
+            <figure>
+                <img src="imagenes_v/beso.jpeg" alt="2016">
+            </figure>
+
+            <p>Esos tres días que duró el Com Sona l’ESO, estaba súper feliz. Estaba con la chica que quería. No solo
+                era atracción física lo que sentía, era mucho más. La última noche estuvimos toda la noche por el
+                camping. No quería que se acabara. Después de eso, seguimos hablando... como llevábamos haciendo mucho
+                tiempo. Con nuestras bromas de los niños, hablando de que queríamos ser mayores. Yo me acuerdo de que te
+                dije que quería ser piloto. Hemos visto que no. Y la verdad, no me acuerdo de que más hablábamos. Éramos
+                unos niños.</p>
+
+            <div class="divider"></div>
+
+            <p>Los siguientes años hablábamos de forma esporádica, hasta que, de casualidad, en Fallas del año 2019, yo
+                iba con mi primo Nacho por la zona de Cánovas y me pareció verte.</p>
+            <p>No podía ser.
+                —¿Es Vanesa? —me pregunté.
+                Tenía que comprobarlo y, efectivamente, eras tú.</p>
+            <p>Estuvimos un buen rato hablando, pero nuestros amigos nos esperaban. Fue una sensación increíble. Volví a
+                sentir esos nervios. Esos nervios que solo me ha conseguido sacar una persona en este mundo: tú.</p>
+            <p>Luego, esa misma noche, nos volvimos a cruzar, y ahí supe que a ti también te hizo ilusión verme. Cómo
+                no, empezamos a hablar de nuevo, pero esta vez ya hablábamos para vernos. Tampoco me lo pensé mucho, y a
+                los dos días volví a Valencia solo para verte.</p>
+
+            <figure>
+                <img src="imagenes_v/fallas.jpeg" alt="2019">
+            </figure>
+
+            <p>Los siguientes meses hablábamos muchísimo, pero estábamos en una edad en la que yo solo pensaba en salir
+                de fiesta. Viniste a Benicàssim a verme. Increíble. Yo no tuve el valor de ir a verte a Valencia. Y por
+                cosas así, después de vernos la noche de Akuarela, poco a poco nos separamos y dejamos de hablar.</p>
+            <p>Perdí el tren, y eso es algo de lo que no me he olvidado a día de hoy. Dejé pasar a la mujer de mi vida.
+                Algún día te respondí a alguna historia, pero ya no nos volvimos a conectar. Te había perdido.</p>
+
+            <div class="divider"></div>
+
+            <p>Durante los años siguientes no supe mucho de ti. Pero eso no hizo que yo me olvidara de ti.
+            <p>Durante todos esos años, nunca volví a sentir esos nervios extraños que se sienten al ver a esa persona
+                especial. Será que esa sensación solo hay una persona que la pueda causar en mí.</p>
+            <p>En 2022 me mudé a Valencia y, sin pensarlo dos veces, te hablé. Recuerda que nunca has llegado a salir de
+                mi cabeza.
+                Hablando contigo, me dabas largas, y una noche te propuse tomar un café. Eso no iba a salir bien.
+                Al ver que no querías verme, seguí con mi vida.</p>
+            <p>Llegamos al año pasado.
+                Una noche de Magdalena, a altas horas y con unas copitas de más, te escribí. Y noté que podía tener
+                alguna posibilidad de subirme al tren.</p>
+            <p>Justamente unos meses antes, en una conversación con mi primo Jacob, hablábamos de que éramos jóvenes y
+                que, mientras no nos casemos, teníamos que pasarlo bien. Y a eso mismo yo le contesté que yo me casaría
+                con Vanesa. Que no hablábamos desde hace años, pero yo sabía que me casaría con Vanesa.</p>
+            <p>Empezamos a hablar de nuevo, y poco a poco me iba ilusionando más y más, hasta que un día por la tarde,
+                yo iba en Valenbisi hacia la plaza de Honduras. Yo sabía que vivías por la zona, e intencionadamente
+                aparqué la bicicleta en la parada del Burger, por si acaso te veía. Ya llevábamos cinco años sin vernos,
+                y esa proyección mía dio sus frutos.</p>
+            <p>Al otro lado de la acera me pareció reconocer a tu hermana, por lo que la chica al lado debía de ser tú.
+                A medida que íbamos cruzando por el paso de cebra de Blasco, te reconocí.
+                Volví a sentir esos nervios que solo tú has conseguido que tenga.
+                Nos volvimos a ver cinco años más tarde, pero solo fueron unos segundos, por lo que quedamos para tomar
+                algo y ponernos al día.</p>
+            <p>Al principio, durante el paseo, te veía como algo inalcanzable. Pero luego, una vez empezamos a hablar
+                más y más, noté una conexión contigo, esa conexión que tuvimos cuando éramos pequeños.</p>
+            <p>Al acabar de tomar unas cervezas en el Mercado de Colón, nos fuimos paseando hacia tu casa. Y tú me
+                acercaste en coche a la mía. A la hora de despedirnos, yo sólo pensaba en besarte, pero no quería
+                cagarla.
+                Así que me contuve. Pero sentí que ahí podía empezar el mejor capítulo de mi vida.</p>
+
+            <div class="divider"></div>
+
+            <p>El día 1 de mayo, hace justo un año y dos días, quedamos para ver el Faro de Cullera. Precioso, por
+                cierto. Ese mismo día me dije a mí mismo que esta vez no iba a perder el tren. Cuando acabamos la cena,
+                te di tu regalo de cumpleaños: un llavero que no significaba nada, pero lo significaba todo.</p>
+            <p>Un año más tarde, aquí estamos, sumando momentos juntos.</p>
+
+            <figure class="collage">
+                <div class="collage-grid">
+                    <img src="imagenes_v/roma.jpeg" alt="2024">
+                    <img src="imagenes_v/garbi.jpeg" alt="2024">
+                    <img src="imagenes_v/londres.jpeg" alt="2024">
+                    <img src="imagenes_v/caras.jpeg" alt="2024">
+                    <img src="imagenes_v/estoyenamorado.jpeg" alt="2024">
+                    <img src="imagenes_v/guapos.jpeg" alt="2024">
+                </div>
+            </figure>
+
+
+            <p>Me gustaría que supieras —aunque ya lo sabes— que eres la mujer de mi vida, que te amo. Sacas mi mejor
+                versión. Y que yo ya decidí, hace un año, que quiero pasar el resto de mi vida contigo.</p>
+            <p> </p>
+            <p> </p>
+            <p class="highlight">Y para seguir sumando momentos juntos, he querido regalarte una experiencia que esté a
+                la altura de todo lo que significas para mí. Sé que los balnearios te encantan, así que he pensado que
+                no hay mejor forma de celebrarnos que escaparnos juntos a uno. Un lugar donde podamos desconectar del
+                mundo, relajarnos, reírnos sin prisa y, simplemente, disfrutar de estar el uno con el otro. Pasar una
+                noche contigo, en calma, sin relojes ni distracciones, solo nosotros, como tantas veces imaginamos de
+                pequeños. Porque este es solo uno más de todos los momentos que quiero vivir contigo. Porque lo tengo
+                claro desde hace un año: quiero seguir sumando días, experiencias, historias… Y sobre todo, quiero
+                seguir sumando vida contigo.</p>
+            <p class="signature">Con todo mi amor,<br><strong>Gonzalo</strong></p>
+        </article>
+
+        <figure>
+            <img src="imagenes_v/london_top.jpeg" alt="2019">
+        </figure>
+
+        <footer>¡Felices 25, te quiero 💚!</footer>
+    </div>
+
+    <script>
+        // Inserta corazones flotantes al clicar
+        document.body.addEventListener('click', e => {
+            const heart = document.createElement('div');
+            heart.className = 'float-heart';
+            heart.textContent = '💖';
+            heart.style.left = (e.clientX - 30) + 'px';
+            heart.style.top = (e.clientY - 30) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3000);
+        });
+    </script>
 </body>
+
 </html>
