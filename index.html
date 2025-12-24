@@ -10,22 +10,45 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ================= BODY (SAFE AREA) ================= */
 body {
-  height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
   overflow: hidden;
   background: #000;
   font-family: "Playfair Display", serif;
 }
 
-/* ESCENA */
+/* ================= ZOOM IN ================= */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= ESCENA ================= */
 .wrapper {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  /* Fondo navideño real */
   background:
     radial-gradient(circle at bottom, rgba(255,120,60,0.25), transparent 55%),
     linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
@@ -40,15 +63,19 @@ body {
   pointer-events: none;
 }
 
-/* LIBRO */
+/* ================= LIBRO ================= */
 .book {
   position: relative;
   width: 320px;
   height: 440px;
+  max-width: 90vw;
+  max-height: 90svh;
   perspective: 2000px;
+
+  animation: zoomIn 1.2s ease-out forwards;
 }
 
-/* PORTADA */
+/* ================= PORTADA ================= */
 .cover {
   position: absolute;
   inset: 0;
@@ -86,22 +113,26 @@ body {
 }
 
 .cover p {
-  font-size: 1.1rem;
-  opacity: .9;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
 .cover button {
   margin-top: 25px;
-  padding: 14px 30px;
+  padding: 16px 34px;
   border-radius: 30px;
   border: none;
   background: #b71c1c;
   color: white;
-  font-size: 1rem;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
   cursor: pointer;
 }
 
-/* INTERIOR */
+/* ================= INTERIOR ================= */
 .inside {
   position: absolute;
   inset: 0;
@@ -111,7 +142,7 @@ body {
   overflow: hidden;
 }
 
-/* LUZ DE CHIMENEA (AMBIENTAL) */
+/* LUZ CHIMENEA */
 .inside::before {
   content: "";
   position: absolute;
@@ -144,10 +175,10 @@ body {
   );
 }
 
-/* MENSAJE */
+/* ================= MENSAJE ================= */
 .message {
   position: absolute;
-  top: 25%;
+  top: 24%;
   width: 100%;
   text-align: center;
   color: white;
@@ -155,30 +186,29 @@ body {
   z-index: 2;
 }
 
+.message p {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8rem;
+}
+
 .message h2 {
   font-family: "Great Vibes", cursive;
   font-size: 3.2rem;
-  margin-bottom: 15px;
 }
 
-.message p {
-  font-size: 1.5rem;
-}
-
-/* FIRMA */
+/* ================= FIRMA ================= */
 .signature {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-family: "Great Vibes", cursive;
-    color: white;
-    font-size: 1.2rem;
-    opacity: 0.7;
-    letter-spacing: 0.4px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: "Great Vibes", cursive;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.7;
 }
 
-/* NIEVE */
+/* ================= NIEVE ================= */
 .snow {
   position: absolute;
   top: -10%;
@@ -194,7 +224,7 @@ body {
   to { transform: translateY(120vh); }
 }
 
-/* ESTADO ABIERTO */
+/* ================= ESTADO ABIERTO ================= */
 .book.open .cover {
   transform: rotateY(-160deg);
   opacity: 0;
@@ -205,26 +235,12 @@ body {
   transition: opacity 2s ease;
 }
 
-.cover p,
-.message p {
-  font-family: "Great Vibes", cursive;
-  font-size: 1.8rem;
-  line-height: 1.4;
-  letter-spacing: 0.5px;
-}
-
-.cover button {
-  font-family: "Great Vibes", cursive;
-  font-size: 1.6rem;
-  letter-spacing: 0.5px;
-  padding: 16px 34px;
-}
-
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 480px) {
   .book {
-  max-height: 90vh;
-    }   
+    width: 320px;
+    height: 500px;
+  }
 
   .message {
     top: 22%;
@@ -235,15 +251,9 @@ body {
   }
 
   .message p {
-    font-size: 1.4rem;
-  }
-
-  .signature {
-    bottom: 16px;
+    font-size: 1.5rem;
   }
 }
-
-
 </style>
 </head>
 
@@ -264,9 +274,7 @@ body {
     <!-- INTERIOR -->
     <div class="inside">
       <div class="message">
-        <p>
-          Te deseo una
-        </p>
+        <p>Te deseo una</p>
         <h2>Feliz Navidad<br>❤️</h2>
       </div>
 
