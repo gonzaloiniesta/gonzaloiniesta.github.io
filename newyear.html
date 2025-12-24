@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Navidad</title>
+<title>Feliz Año 2026</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
@@ -14,6 +14,7 @@
   box-sizing: border-box;
 }
 
+/* ================= BODY ================= */
 body {
   min-height: 100svh;
   overflow: hidden;
@@ -21,23 +22,25 @@ body {
   font-family: "Playfair Display", serif;
 }
 
-/* ZOOM IN */
+/* ================= ZOOM IN ================= */
 @keyframes zoomIn {
   from { transform: scale(0.94); opacity: 0; }
   to   { transform: scale(1); opacity: 1; }
 }
 
-/* ESCENA */
+/* ================= ESCENA AÑO NUEVO ================= */
 .wrapper {
   position: fixed;
   inset: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background:
-    radial-gradient(circle at bottom, rgba(255,120,60,0.25), transparent 55%),
-    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-    url("https://images.unsplash.com/photo-1543589077-47d81606c1bf")
+    radial-gradient(circle at bottom, rgba(255,200,100,0.25), transparent 55%),
+    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1513151233558-d860c5398176")
       center / cover no-repeat;
 }
 
@@ -45,11 +48,11 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%);
+  background: radial-gradient(circle at top, rgba(255,255,255,0.1), transparent 60%);
   pointer-events: none;
 }
 
-/* LIBRO */
+/* ================= LIBRO ================= */
 .book {
   position: relative;
   width: 320px;
@@ -60,11 +63,11 @@ body {
   animation: zoomIn 1.2s ease-out forwards;
 }
 
-/* PORTADA */
+/* ================= PORTADA ================= */
 .cover {
   position: absolute;
   inset: 0;
-  background: url("https://images.unsplash.com/photo-1512389142860-9c449e58a543")
+  background: url("https://images.unsplash.com/photo-1482517967863-00e15c9b44be")
     center / cover;
   transform-origin: left;
   transition: transform 2s ease, opacity 1s ease;
@@ -94,55 +97,49 @@ body {
 
 .cover h1 {
   font-family: "Great Vibes", cursive;
-  font-size: 3rem;
+  font-size: 2.8rem;
+  margin-bottom: 12px;
 }
 
 .cover p {
   font-family: "Great Vibes", cursive;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  line-height: 1.4;
 }
 
 .cover button {
   margin-top: 25px;
-  padding: 16px 34px;
+  padding: 16px 36px;
   border-radius: 30px;
   border: none;
-  background: #b71c1c;
-  color: white;
+  background: linear-gradient(45deg, #d4af37, #ffdd75);
+  color: #000;
   font-family: "Great Vibes", cursive;
   font-size: 1.6rem;
   cursor: pointer;
 }
 
-/* INTERIOR */
+/* ================= INTERIOR ================= */
 .inside {
   position: absolute;
   inset: 0;
-  background: url("https://images.unsplash.com/photo-1543946603-0f7d10e62d86")
+  background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba")
     center / cover;
   opacity: 0;
   z-index: 1;
   overflow: hidden;
 }
 
-/* LUZ */
+/* LUZ FESTIVA */
 .inside::before {
   content: "";
   position: absolute;
-  bottom: -20%;
-  left: -20%;
-  width: 140%;
-  height: 60%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255,120,60,0.35),
-    rgba(255,120,60,0.15),
-    transparent 70%
-  );
-  animation: fireGlow 3s infinite alternate;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(255,200,100,0.25), transparent 60%);
+  animation: glow 4s infinite alternate;
 }
 
-@keyframes fireGlow {
+@keyframes glow {
   from { opacity: 0.6; }
   to   { opacity: 1; }
 }
@@ -151,31 +148,32 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.3),
-    rgba(0,0,0,.65)
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.7));
 }
 
-/* MENSAJE */
+/* ================= MENSAJE ================= */
 .message {
   position: absolute;
   top: 24%;
   width: 100%;
   text-align: center;
   color: white;
+  padding: 20px;
+  z-index: 2;
 }
 
-.message p,
+.message p {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8rem;
+}
+
 .message h2 {
   font-family: "Great Vibes", cursive;
+  font-size: 3.4rem;
+  margin-top: 5px;
 }
 
-.message p { font-size: 1.8rem; }
-.message h2 { font-size: 3.2rem; }
-
-/* FIRMA */
+/* ================= FIRMA ================= */
 .signature {
   position: absolute;
   bottom: env(safe-area-inset-bottom, 20px);
@@ -184,26 +182,25 @@ body {
   font-family: "Great Vibes", cursive;
   color: white;
   font-size: 1.2rem;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-/* NIEVE */
-.snow {
+/* ================= CONFETI ================= */
+.confetti {
   position: absolute;
   top: -10%;
   width: 6px;
   height: 6px;
-  background: white;
-  border-radius: 50%;
-  opacity: .8;
+  background: gold;
+  opacity: 0.9;
   animation: fall linear infinite;
 }
 
 @keyframes fall {
-  to { transform: translateY(120vh); }
+  to { transform: translateY(120vh) rotate(360deg); }
 }
 
-/* ESTADO ABIERTO */
+/* ================= ESTADO ABIERTO ================= */
 .book.open .cover {
   transform: rotateY(-160deg);
   opacity: 0;
@@ -213,6 +210,18 @@ body {
   opacity: 1;
   transition: opacity 2s ease;
 }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .book {
+    width: 320px;
+    height: 500px;
+  }
+
+  .message h2 {
+    font-size: 3rem;
+  }
+}
 </style>
 </head>
 
@@ -221,34 +230,43 @@ body {
 <div class="wrapper">
   <div class="book" id="book">
 
+    <!-- PORTADA -->
     <div class="cover">
       <div class="cover-content">
-        <h1>Llevamos todo el año esperando...</h1>
-        <p>Pulsa el botón<br>Sube el volumen<br>Y disfruta</p>
+        <h1>Se acerca un nuevo comienzo…</h1>
+        <p>
+          Pulsa el botón<br>
+          Sube el volumen<br>
+          Y brinda por lo que viene
+        </p>
         <button onclick="openBook(); countClick();">Abrir</button>
       </div>
     </div>
 
+    <!-- INTERIOR -->
     <div class="inside">
       <div class="message">
-        <p>Te deseo una</p>
-        <h2>Feliz Navidad<br>❤️</h2>
+        <p>Te deseo un</p>
+        <h2>Feliz Año 2026 ✨</h2>
       </div>
-      <div class="signature">by gonzaloiniesta</div>
+
+      <div class="signature">
+        by gonzaloiniesta
+      </div>
     </div>
 
   </div>
 </div>
 
-<audio id="music" src="music/José Feliciano - Feliz Navidad (Official Audio).mp3"></audio>
+<audio id="music" src="music/feliz-ano-2026.mp3"></audio>
 
 <script>
-/* CONTADOR */
-async function countClick() {
-  fetch("https://api.countapi.xyz/hit/gonzaloiniesta-feliz-navidad/open-book-clicks");
+/* ================= CONTADOR ================= */
+function countClick() {
+  fetch("https://api.countapi.xyz/hit/gonzaloiniesta-feliz-ano-2026/open-book-clicks");
 }
 
-/* ABRIR LIBRO */
+/* ================= ABRIR LIBRO ================= */
 function openBook() {
   const book = document.getElementById("book");
   book.classList.add("open");
@@ -264,19 +282,21 @@ function openBook() {
     if (v >= 1) clearInterval(fade);
   }, 150);
 
-  startSnow();
+  startConfetti();
 }
 
-/* NIEVE */
-function startSnow() {
+/* ================= CONFETI ================= */
+function startConfetti() {
   setInterval(() => {
-    const s = document.createElement("div");
-    s.className = "snow";
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.animationDuration = (6 + Math.random() * 6) + "s";
-    document.body.appendChild(s);
-    setTimeout(() => s.remove(), 12000);
-  }, 150);
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.animationDuration = (4 + Math.random() * 4) + "s";
+    c.style.background =
+      ["#ffd700", "#ffffff", "#ffcc66"][Math.floor(Math.random() * 3)];
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 10000);
+  }, 180);
 }
 </script>
 
