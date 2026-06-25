@@ -39,7 +39,7 @@ export const games = [
     status: "Published on itch.io",
     description:
       "A mobile-first arcade game built with Godot. The project is now moving from web release toward Android, ads and analytics experiments.",
-    image: "assets/games/sky-hopper-card.jpg",
+    image: "assets/games/sky-hopper-itch-cover.jpg",
     technologies: ["Godot", "GDScript", "Web", "YouTube Playables-ready"],
     links: [
       { label: "Play on itch.io", href: "https://gonzaloiniesta.itch.io/sky-hopper", icon: "itch" },
