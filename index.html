@@ -3,77 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gonzalo Iniesta Games creates small, polished casual games for web, mobile and playable platforms.">
-  <title>Gonzalo Iniesta Games</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Gonzalo Iniesta is a software engineer and game developer building games, writing code and sharing the journey in public.">
+  <meta name="theme-color" content="#070914">
+  <meta property="og:title" content="Gonzalo Iniesta - Software Engineer & Game Developer">
+  <meta property="og:description" content="Building games. Writing code. Sharing the journey.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero/dev-studio-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Gonzalo Iniesta - Software Engineer & Game Developer</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/hero/dev-studio-hero.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="Gonzalo Iniesta Games home">
-      <span class="brand-mark">GI</span>
-      <span>Gonzalo Iniesta Games</span>
-    </a>
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#games">Games</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-image" src="assets/sky-hopper-key-art.png" alt="Colorful arcade sky scene with a small character jumping through clouds">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Independent casual games</p>
-        <h1 id="hero-title">Gonzalo Iniesta Games</h1>
-        <p class="hero-copy">Small, focused arcade experiences for web, mobile and playable platforms.</p>
-        <div class="hero-actions" aria-label="Primary actions">
-          <a class="button primary" href="#games">View games</a>
-          <a class="button secondary" href="mailto:hello@gonzaloiniesta.com">Contact</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="games" class="section">
-      <div class="section-header">
-        <p class="eyebrow">Games</p>
-        <h2>Released and upcoming work</h2>
-      </div>
-      <div class="games-grid" data-games></div>
-    </section>
-
-    <section id="about" class="section split">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2>Reusable production for compact games</h2>
-      </div>
-      <div class="text-column">
-        <p>Gonzalo Iniesta Games is a small studio practice focused on browser-first casual games with clean publishing flows and platform-ready builds.</p>
-        <p>Each game lives in its own private repository. This portfolio only contains public information, promotional media and links to published destinations.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Publishing, platform and collaboration inquiries</h2>
-      </div>
-      <div class="contact-actions">
-        <a class="button primary" href="mailto:hello@gonzaloiniesta.com">Email</a>
-        <a class="button secondary" href="https://github.com/gonzaloiniesta" rel="noopener">GitHub</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <span>&copy; <span data-year></span> Gonzalo Iniesta Games</span>
-    <span>Made for web and mobile play.</span>
-  </footer>
-
-  <script src="script.js"></script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="app"></div>
+  <noscript>
+    <main class="noscript">
+      <h1>Building games. Writing code. Sharing the journey.</h1>
+      <p>Enable JavaScript to view the full portfolio.</p>
+    </main>
+  </noscript>
+  <script type="module" src="pages/home.js"></script>
 </body>
 </html>

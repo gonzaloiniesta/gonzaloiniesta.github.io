@@ -1,0 +1,127 @@
+:root {
+  color-scheme: dark;
+  --bg: #070914;
+  --bg-soft: #0c1020;
+  --panel: rgba(15, 19, 35, 0.76);
+  --panel-strong: rgba(20, 25, 45, 0.92);
+  --text: #f4f7fb;
+  --muted: #a7b0c0;
+  --subtle: #778196;
+  --line: rgba(255, 255, 255, 0.12);
+  --violet: #9b6cff;
+  --cyan: #46d9ff;
+  --green: #48e28d;
+  --amber: #ffbf57;
+  --danger: #ff6f91;
+  --shadow: 0 24px 90px rgba(0, 0, 0, 0.42);
+  --radius: 8px;
+  --max: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(155, 108, 255, 0.18), transparent 32rem),
+    radial-gradient(circle at 92% 18%, rgba(70, 217, 255, 0.12), transparent 34rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0;
+  line-height: 1.02;
+}
+
+h1 {
+  max-width: 820px;
+  font-size: clamp(3.2rem, 8vw, 7.8rem);
+}
+
+h1 span {
+  display: block;
+}
+
+h2 {
+  max-width: 760px;
+  font-size: clamp(2.1rem, 5vw, 4.3rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 30;
+  transform: translateY(-160%);
+  padding: 10px 14px;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: var(--radius);
+  font-weight: 800;
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.noscript {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  gap: 18px;
+  padding: 32px;
+}

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="gamepad" viewBox="0 0 24 24">
+    <path d="M7 9h10a5 5 0 0 1 4.8 6.4l-.6 2.1a2.6 2.6 0 0 1-4.4 1l-2.2-2.2H9.4l-2.2 2.2a2.6 2.6 0 0 1-4.4-1l-.6-2.1A5 5 0 0 1 7 9Z"/>
+    <path d="M8 12v4M6 14h4M16.5 13.2h.1M18.8 15.2h.1"/>
+  </symbol>
+  <symbol id="github" viewBox="0 0 24 24">
+    <path d="M12 2.5a9.5 9.5 0 0 0-3 18.5c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.2-3.5-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.3-.3-4.7-1.2-4.7-5.1 0-1.1.4-2 1.1-2.8-.1-.3-.5-1.4.1-2.8 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.5.1 2.8.7.8 1.1 1.7 1.1 2.8 0 3.9-2.4 4.8-4.7 5.1.4.3.8 1 .8 2v2.9c0 .3.2.6.7.5A9.5 9.5 0 0 0 12 2.5Z"/>
+  </symbol>
+  <symbol id="youtube" viewBox="0 0 24 24">
+    <path d="M21 8.2a3 3 0 0 0-2.1-2.1C17 5.6 12 5.6 12 5.6s-5 0-6.9.5A3 3 0 0 0 3 8.2 31 31 0 0 0 3 15.8a3 3 0 0 0 2.1 2.1c1.9.5 6.9.5 6.9.5s5 0 6.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 0-7.6Z"/>
+    <path d="m10 15 5.2-3L10 9v6Z"/>
+  </symbol>
+  <symbol id="itch" viewBox="0 0 24 24">
+    <path d="M4 4h16l1 5c-.6 1.2-1.5 1.8-2.7 1.8-1.1 0-2-.6-2.5-1.7-.6 1.1-1.5 1.7-2.8 1.7s-2.2-.6-2.8-1.7c-.5 1.1-1.4 1.7-2.5 1.7C6.5 10.8 5.6 10.2 5 9L4 4Z"/>
+    <path d="M6 12v7h12v-7M9 15h6v4H9v-4Z"/>
+  </symbol>
+  <symbol id="play-store" viewBox="0 0 24 24">
+    <path d="M5 3.8v16.4a1 1 0 0 0 1.5.9l13.1-8.2a1 1 0 0 0 0-1.8L6.5 2.9A1 1 0 0 0 5 3.8Z"/>
+    <path d="m5.5 3.5 8.2 8.5-8.2 8.5M13.7 12l3.3-3.4M13.7 12l3.3 3.4"/>
+  </symbol>
+  <symbol id="linkedin" viewBox="0 0 24 24">
+    <path d="M5 9h3v10H5V9Zm1.5-4A1.7 1.7 0 1 1 6.5 8a1.7 1.7 0 0 1 0-3ZM11 9h3v1.4a3.4 3.4 0 0 1 3-1.6c2.2 0 3.8 1.4 3.8 4.5V19h-3v-5.2c0-1.5-.5-2.4-1.8-2.4-1 0-1.6.7-1.9 1.4-.1.2-.1.6-.1.9V19h-3V9Z"/>
+  </symbol>
+  <symbol id="mail" viewBox="0 0 24 24">
+    <path d="M4 6h16v12H4V6Z"/>
+    <path d="m4 7 8 6 8-6"/>
+  </symbol>
+  <symbol id="godot" viewBox="0 0 24 24">
+    <path d="m4 10 2-4 3 2 3-4 3 4 3-2 2 4v7a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-7Z"/>
+    <path d="M8 13h.1M16 13h.1M9 17c1.8 1 4.2 1 6 0"/>
+  </symbol>
+  <symbol id="gdscript" viewBox="0 0 24 24">
+    <path d="M6 4h9l3 3v13H6V4Z"/>
+    <path d="M9 10h6M9 14h4M15 4v4h3"/>
+  </symbol>
+  <symbol id="git" viewBox="0 0 24 24">
+    <path d="m12 2 10 10-10 10L2 12 12 2Z"/>
+    <path d="M8 8h4v8M12 12h4M8 8l4 4"/>
+  </symbol>
+  <symbol id="vscode" viewBox="0 0 24 24">
+    <path d="m4 9 4-4 10-3 2 1v18l-2 1-10-3-4-4 4-3-4-3Z"/>
+    <path d="m8 5 10 8M8 19l10-8"/>
+  </symbol>
+  <symbol id="android" viewBox="0 0 24 24">
+    <path d="M7 10h10v7a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3v-7ZM8 7l-2-3M16 7l2-3M6 10h12M5 12v4M19 12v4"/>
+    <path d="M10 14h.1M14 14h.1"/>
+  </symbol>
+  <symbol id="html5" viewBox="0 0 24 24">
+    <path d="M5 3h14l-1.3 15L12 21l-5.7-3L5 3Z"/>
+    <path d="M9 8h6M9.3 12h5.4l-.3 3-2.4 1.2L9.6 15"/>
+  </symbol>
+  <symbol id="blender" viewBox="0 0 24 24">
+    <path d="M5 8h8l-3-3M7 12h7M4 16h8"/>
+    <path d="M13 12a5 5 0 1 0 5-5M15 12a2 2 0 1 0 2-2"/>
+  </symbol>
+  <symbol id="aseprite" viewBox="0 0 24 24">
+    <path d="M6 4h12v16H6V4Z"/>
+    <path d="M8 6h8v3H8V6ZM9 13h2M13 13h2M10 17h4"/>
+  </symbol>
+</svg>

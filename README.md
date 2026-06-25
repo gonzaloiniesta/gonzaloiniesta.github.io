@@ -1,35 +1,67 @@
-# Gonzalo Iniesta Games
+# Gonzalo Iniesta Portfolio
 
-Public portfolio for Gonzalo Iniesta Games, hosted with GitHub Pages.
+Personal portfolio for Gonzalo Iniesta: software engineering, game development, public learning and community.
 
-The portfolio contains only public studio information, promotional images and links to published games. Game source code, private assets, builds, keystores and credentials stay in each private game repository.
+This repository is public and intentionally contains only public information, public promotional images and links to published destinations. Game source code, private assets, exported builds, keystores and credentials stay in each private game repository.
 
-## Structure
+## Architecture
 
-- `index.html` - main landing page.
-- `styles.css` - responsive visual design.
-- `script.js` - public game list rendering.
-- `assets/` - public promotional images only.
+```text
+index.html
+pages/
+  home.js
+components/
+  Header.js
+  Hero.js
+  GameCard.js
+  TechStack.js
+  Roadmap.js
+  Devlog.js
+  Footer.js
+data/
+  site.js
+styles/
+  main.css
+  base.css
+  layout.css
+  components.css
+  animations.css
+assets/
+  hero/
+  games/
+  icons.svg
+```
 
-## Adding A Game
+Legacy pages remain available as standalone files:
 
-1. Publish the game on a public destination such as itch.io, YouTube or Google Play.
-2. Add a public promotional image to `assets/`.
-3. Add the public metadata and links to the `games` array in `script.js`.
-4. Do not copy game source, private assets or exported builds into this repository.
+- `merrycrhistmas.html`
+- `newyear.html`
 
-Legacy seasonal pages remain available as standalone HTML files.
+## Add A New Game
 
-## 🎶 Música
+1. Add an optimized public cover image to `assets/games/`.
+2. Open `data/site.js`.
+3. Add a new object to the `games` array with `title`, `status`, `description`, `image`, `technologies` and `links`.
+4. Use only public links such as itch.io, YouTube, Google Play, App Store or Steam.
+5. Do not copy source code, builds, private assets or credentials into this repo.
 
-La felicitación incluye música navideña que se reproduce tras la interacción del usuario, cumpliendo las restricciones de los navegadores modernos.
+## Local Preview
 
----
+Because the site uses JavaScript modules, serve it locally instead of opening `index.html` directly:
 
-## 👤 Autor
+```sh
+python3 -m http.server 8080
+```
 
-Felicitación navideña creada por **Gonzalo Iniesta**.
+Then open:
 
----
+```text
+http://localhost:8080
+```
 
-🎅 ¡Feliz Navidad!
+## Performance Notes
+
+- Hero and game images are optimized JPG files.
+- Non-hero images use lazy loading.
+- No third-party font or analytics dependency is loaded.
+- Animations respect `prefers-reduced-motion`.
