@@ -35,6 +35,17 @@ export const links = [
 
 export const games = [
   {
+    title: "Queens of the Realm",
+    status: "Published on itch.io",
+    description:
+      "A royal chess puzzle built with Godot. Place queens, avoid threats, use walls and solve each board with a polished mobile-first web interface.",
+    image: "assets/games/queens-of-the-realm.png",
+    technologies: ["Godot", "GDScript", "Puzzle", "Web", "Mobile-first"],
+    links: [
+      { label: "Play on itch.io", href: "https://gonzaloiniesta.itch.io/queens-of-the-realm", icon: "itch" }
+    ]
+  },
+  {
     title: "Sky Hopper",
     status: "Published on itch.io",
     description:
