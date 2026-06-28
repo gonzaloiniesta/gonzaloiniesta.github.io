@@ -52,11 +52,11 @@
 .button {
   display: inline-flex;
   max-width: 100%;
-  min-height: 46px;
+  min-height: 42px;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border: 1px solid transparent;
   border-radius: var(--radius);
   font-weight: 850;
@@ -89,9 +89,9 @@
 }
 
 .button.compact {
-  min-height: 38px;
-  padding: 9px 12px;
-  font-size: 0.88rem;
+  min-height: 36px;
+  padding: 8px 11px;
+  font-size: 0.84rem;
 }
 
 .panel-dot {
@@ -106,8 +106,8 @@
 
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .game-card,
@@ -128,14 +128,15 @@
 
 .game-card img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 7;
   object-fit: cover;
 }
 
 .game-card-body {
   display: grid;
-  gap: 18px;
-  padding: clamp(20px, 4vw, 30px);
+  gap: 13px;
+  padding: clamp(16px, 2.6vw, 22px);
+  font-size: 0.94rem;
 }
 
 .game-card-body p:not(.eyebrow),
@@ -148,36 +149,36 @@
 .card-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .pill {
-  padding: 6px 10px;
+  padding: 5px 9px;
   border: 1px solid rgba(70, 217, 255, 0.22);
   border-radius: 999px;
   background: rgba(70, 217, 255, 0.08);
   color: #c8f4ff;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   font-weight: 800;
 }
 
 .about-panel {
   display: grid;
-  gap: 18px;
-  padding: clamp(22px, 4vw, 34px);
+  gap: 14px;
+  padding: clamp(18px, 3vw, 26px);
 }
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 12px;
 }
 
 .tech-card {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 18px;
+  gap: 12px;
+  padding: 15px;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
@@ -189,8 +190,8 @@
 
 .tech-icon {
   display: grid;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   flex: 0 0 auto;
   place-items: center;
   border-radius: var(--radius);
@@ -210,7 +211,7 @@
 
 .roadmap-list {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -218,9 +219,9 @@
 
 .roadmap-item {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
-  padding: 18px;
+  padding: 15px;
 }
 
 .roadmap-marker {
@@ -245,14 +246,14 @@
 .devlog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 18px;
+  gap: 14px;
 }
 
 .devlog-card {
   display: grid;
-  gap: 18px;
-  min-height: 230px;
-  padding: clamp(22px, 4vw, 32px);
+  gap: 14px;
+  min-height: 190px;
+  padding: clamp(18px, 3vw, 26px);
 }
 
 .text-link {
@@ -282,6 +283,14 @@
 }
 
 @media (max-width: 640px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-card img {
+    aspect-ratio: 16 / 8;
+  }
+
   .hero-actions {
     display: grid;
     grid-template-columns: 1fr;
